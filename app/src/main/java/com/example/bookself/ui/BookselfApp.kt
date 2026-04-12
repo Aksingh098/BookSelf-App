@@ -9,24 +9,26 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.bookself.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun BookSelfApp(){
-    Scaffold(
-        modifier = Modifier.fillMaxSize(),
-        topBar = {
-            BookSelfTopAppBar()
-        }
+fun BookSelfApp(
+    modifier: Modifier = Modifier
+){
 
-    ) {values ->
+    val bookselfViewModel : BookselfViewModel = viewModel(factory = BookselfViewModel.Factory )
+
+
         BookHomeScreen(
-            modifier = Modifier.padding(values)
+            modifier = modifier,
+            bookUiState = bookselfViewModel.bookselfUiState,
+            retryAction = { bookselfViewModel.getBooks() }
         )
 
     }
-}
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
