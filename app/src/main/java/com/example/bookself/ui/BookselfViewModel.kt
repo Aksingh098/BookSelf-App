@@ -31,14 +31,14 @@ class BookselfViewModel(private val booksRepository: BooksRepository): ViewModel
 
 
     init {
-        getBooks("jazz history")
+        getBooks()
     }
 
-    fun getBooks(query: String = "jazz history"){
+    fun getBooks(){
         viewModelScope.launch {
             bookselfUiState = BookselfUiState.Loading
             bookselfUiState = try {
-                BookselfUiState.Success(booksRepository.getBooks(query))
+                BookselfUiState.Success(booksRepository.getBooks("Eiichiro Oda"))
             } catch (e: Exception){
                 BookselfUiState.Error
             }
