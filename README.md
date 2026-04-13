@@ -2,6 +2,10 @@
 
 BookSelf is an Android app built with **Kotlin** and **Jetpack Compose** that fetches books from the **Google Books API** and displays their covers in a responsive staggered grid.
 
+## 🎥 Demo
+[BookSelf.webm](https://github.com/user-attachments/assets/d81d70bc-89a2-4cd0-9cf1-b21cba290e1e)
+
+
 ## Features
 
 - Compose-first UI with Material 3 styling.
