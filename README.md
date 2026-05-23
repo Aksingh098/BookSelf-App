@@ -80,7 +80,7 @@ BOOKS_API_KEY=your_api_key_here
 
 ## Current Behavior
 
-- On launch, the app searches Google Books for `"jazz history"`.
+- On launch, the app searches Google Books for `"Eichiro Oda"`.
 - Results are displayed as a cover-image grid.
 - If the request fails, an error message and **Retry** button are shown.
 
